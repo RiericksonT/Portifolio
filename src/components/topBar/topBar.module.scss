@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+
+.div{
+
+    height: 10vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(115,114,114,1) 55%, rgba(254,254,254,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .footer{
+        display: flex;
+
+        height: 65%;
+        margin: 0;
+        padding: 1rem;
+        background-color: transparent;
+        border: 1px solid;
+        border-image: linear-gradient(90deg, rgba(115,114,114,1) 0%,rgba(115,114,114,1) 60%, rgba(254,254,254,1) 100%) 1;
+        border-left: 0cap;
+        border-right: 0cap;
+        color: $color-text;
+        
+        text-align: left;
+        font-size: 1.3rem;
+        font-weight: 600;
+
+        p{  
+            align-self: center;
+            color: $color-text;
+            margin-left: 5%;
+            text-decoration: none;
+        }
+    }
+}

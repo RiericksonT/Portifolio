@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 20px;}
+}
+
+.menu_card {
+    width: 10vw;
+    height: 4vh;
+    background-color: transparent;
+    border-radius: 5%;
+    border: 2px solid $color-text;
+    //octacogno clip-path
+    clip-path: polygon(15% 10%, 80% 10%, 90% 100%, 25% 100%);
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+                
+    &:hover{
+        background-color: $color-primary;
+        color: $color-background;
+        border: 2px solid $color-background;
+        animation: mymove 1s infinite forwards;
+        animation-timing-function: ease-out;
+        animation-play-state: running;
+    }
+    
+
+    .menu_title {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+        color: $color-text;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+
+        &:hover{
+            background-color: $color-primary;
+            color: $color-background;
+        }
+    }
+}

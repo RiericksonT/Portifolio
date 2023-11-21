@@ -1,0 +1,32 @@
+@import '../../styles/variables.scss';
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    .ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;  
+        
+        .liMain{
+            margin-left: 5%;
+        }
+        .liAbout{
+            margin-left: 20%;
+        }
+        .liProjects{
+            margin-left: 40%;
+        }
+        .liContact{
+            margin-left: 60%;
+        }
+        
+        
+    }
+}

@@ -1,0 +1,24 @@
+@import '../../styles/variables.scss';
+
+.footer{
+    margin: 0;
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px solid $color-text;
+    border-left: 0cap;
+    border-right: 0cap;
+    color: $color-secondary;
+    
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+    p{
+        color: $color-secondary;
+        margin-left: 5%;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

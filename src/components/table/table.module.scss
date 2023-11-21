@@ -1,0 +1,69 @@
+@import '../../styles/variables.scss';
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid $black;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: $black;
+    tr:nth-child(odd) {
+        background-color: $color-background-gray2 /* Cor para as linhas ímpares */
+    }
+        .tr{
+            .th{
+                padding: 10px 20px;
+                text-align: left;
+                color: $black;
+                background-color: $color-background-gray;
+            }
+            .td{
+                border: none;
+                padding: 10px 20px;
+                text-align: left;
+                color: $black;
+                background-color: $color-background-gray;
+            }
+        }
+    .caption{
+        padding: 10px 20px;
+        text-align: center;
+        border: 1px solid $black;
+        color: $color-primary;
+        background-color: $black;
+    }
+}
+
+.tableH{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid $black;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: $black;
+    
+        .trH{
+            .thH{
+                padding: 10px 20px;
+                text-align: left;
+                border: 1px solid $black;
+                color: $black;
+                background-color: $color-background-gray;
+            }
+            .tdH{
+                padding: 10px 20px;
+                text-align: left;
+                border: 1px solid $black;
+                color: $black;
+                background-color: $color-background-gray;
+            }
+        }
+    .captionH{
+        padding: 10px 20px;
+        text-align: center;
+        border: 1px solid $black;
+        color: $color-background;
+    }
+}

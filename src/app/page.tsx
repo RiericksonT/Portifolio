@@ -1,95 +1,72 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Menu from "@/components/menu/menu";
+import styles from "./page.module.scss";
+import InfoBar from "@/components/infoBar/infoBar";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { instance } from "./config/axios/axios";
 
 export default function Home() {
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    const comp1 = document.getElementById("main");
+    const comp2 = document.getElementById("about");
+    const comp3 = document.getElementById("projects");
+    const comp4 = document.getElementById("contact");
+
+    comp1?.addEventListener("mouseover", () => {
+      setText("Menu principal do sistema");
+    });
+
+    comp2?.addEventListener("mouseover", () => {
+      setText("Sobre mim :)");
+    });
+
+    comp3?.addEventListener("mouseover", () => {
+      setText("Meus projetos");
+    });
+
+    comp4?.addEventListener("mouseenter", () => {
+      setText("Contato");
+      console.log("entrou");
+    });
+  }, [text]);
+
+  useEffect(() => {
+    const posts = axios
+      .get(`${instance.defaults.baseURL}/wp-json/wp/v2/posts`)
+      .then((res) => {
+        res.data.map((post: any, index: any) => {
+          const inputString = post.content.rendered;
+          // Expressão regular para extrair links de imagens
+          const regex = /(?:src|srcset)="([^"]+)"/g;
+
+          // Array para armazenar os links encontrados
+          const imageLinks: string[] = [];
+
+          let match: RegExpExecArray | null;
+          while ((match = regex.exec(inputString)) !== null) {
+            // O primeiro grupo de captura contém o link da imagem (0)
+            // O segundo grupo de captura contém o link da imagem em tamanhos diferentes (1)
+            if (match[1]) {
+              imageLinks.push(match[1]);
+            }
+          }
+
+          // Exibindo os links encontrados
+          console.log(imageLinks);
+        });
+      });
+  }, []);
+
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+      <div className={styles.divSuperior}>
+        <Menu />
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <div className={styles.divMeio}></div>
+      <InfoBar text={text} />
     </main>
-  )
+  );
 }
