@@ -33,33 +33,6 @@ export default function Home() {
     });
   }, [text]);
 
-  useEffect(() => {
-    const posts = axios
-      .get(`${instance.defaults.baseURL}/wp-json/wp/v2/posts`)
-      .then((res) => {
-        res.data.map((post: any, index: any) => {
-          const inputString = post.content.rendered;
-          // Expressão regular para extrair links de imagens
-          const regex = /(?:src|srcset)="([^"]+)"/g;
-
-          // Array para armazenar os links encontrados
-          const imageLinks: string[] = [];
-
-          let match: RegExpExecArray | null;
-          while ((match = regex.exec(inputString)) !== null) {
-            // O primeiro grupo de captura contém o link da imagem (0)
-            // O segundo grupo de captura contém o link da imagem em tamanhos diferentes (1)
-            if (match[1]) {
-              imageLinks.push(match[1]);
-            }
-          }
-
-          // Exibindo os links encontrados
-          console.log(imageLinks);
-        });
-      });
-  }, []);
-
   return (
     <main className={styles.main}>
       <div className={styles.divSuperior}>
