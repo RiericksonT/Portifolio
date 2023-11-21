@@ -5,3 +5,7 @@ Bem-vindo ao meu portfólio! Aqui você encontrará uma visão geral dos projeto
 ## Sobre Mim
 
 Meu nome é Kaique e sou enegnheiro de software. Com 1.8 anos de experiência na indústria, tenho paixão por tecnologia no geral, mas uma quedinha maior pela área de DevOps e GitOps. Ao longo da minha carreira, tenho trabalhado em diversos projetos desafiadores que me permitiram aprimorar minhas habilidades em desenvolvimento web, práticas DevOps, desenvolvimento de API's e etc.
+
+Se você tiver alguma sugestão, feedback ou estiver interessado em colaborar, sinta-se à vontade para entrar em contato. Estou sempre aberto a novas oportunidades e parcerias.
+
+Obrigado por visitar meu portfólio!
