@@ -7,14 +7,14 @@
     border: 1px solid $color-text;
     border-left: 0cap;
     border-right: 0cap;
-    color: $color-secondary;
+    color: $color-text;
     
     text-align: left;
     font-size: 1.5rem;
     font-weight: 600;
     
     p{
-        color: $color-secondary;
+        color: $color-text;
         margin-left: 5%;
         text-decoration: none;
         &:hover{

@@ -13,7 +13,7 @@
     border: 2px solid $color-text;
     //octacogno clip-path
     clip-path: polygon(15% 10%, 80% 10%, 90% 100%, 25% 100%);
-    margin: 20px;
+    margin: 20%;
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -21,7 +21,7 @@
     align-items: center;
                 
     &:hover{
-        background-color: $color-primary;
+        background-color: $color-txt-background;
         color: $color-background;
         border: 2px solid $color-background;
         animation: mymove 1s infinite forwards;
@@ -38,12 +38,12 @@
         background-color: transparent;
         color: $color-text;
         text-align: center;
-        font-size: 18px;
+        font-size: 2rem;
         font-weight: bold;
 
         &:hover{
-            background-color: $color-primary;
-            color: $color-background;
+            background-color: $color-txt-background;
+            color: $black;
         }
     }
 }
