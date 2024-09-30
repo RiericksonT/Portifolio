@@ -6,6 +6,7 @@ import InfoBar from "./../../../components/infoBar/infoBar";
 import Image from "next/image";
 import ProjectCard from "@/components/projectCard/projectCard";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface ProjectProps {
   title: string;

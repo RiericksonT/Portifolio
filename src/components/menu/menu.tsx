@@ -9,12 +9,12 @@ export default function Menu() {
       <ul className={styles.ul}>
         <li className={styles.liMain}>
           <Link href="/" id="main" style={{ textDecoration: "none" }}>
-            <MenuCard title="Main" />
+            <MenuCard title="Inicio" />
           </Link>
         </li>
         <li className={styles.liAbout}>
           <Link href="/about" id="about" style={{ textDecoration: "none" }}>
-            <MenuCard title="About" />
+            <MenuCard title="Sobre" />
           </Link>
         </li>
         <li className={styles.liProjects}>
@@ -23,12 +23,12 @@ export default function Menu() {
             id="projects"
             style={{ textDecoration: "none" }}
           >
-            <MenuCard title="Projects" />
+            <MenuCard title="Projetos" />
           </Link>
         </li>
         <li className={styles.liContact}>
           <Link href="/contact" id="contact" style={{ textDecoration: "none" }}>
-            <MenuCard title="Contacts" />
+            <MenuCard title="Contato" />
           </Link>
         </li>
       </ul>
