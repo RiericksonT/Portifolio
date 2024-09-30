@@ -1,10 +1,12 @@
 import { Table, TableHorizontal } from "@/components/table/table";
 import styles from "./about.module.scss";
+import Image from "next/image";
 
 export default function About() {
   return (
     <main className={styles.main}>
       <div className={styles.myInfos}>
+        <Image src="/me.png" alt="" width={700} height={600} />
         <Table
           caption={"Who I am?"}
           columns={["name", "age", "email", "phone", "role"]}
