@@ -102,6 +102,12 @@ export default function Projects() {
           })}
         </div>
       </div>
+      <div className={styles.foot}>
+        <Link href="/" className={styles.link}>
+          <Image src="/backbutton.png" alt="" width={70} height={40} />
+          <p>Voltar</p>
+        </Link>
+      </div>
     </main>
   );
 }

@@ -1,20 +1,20 @@
 import { Table, TableHorizontal } from "@/components/table/table";
 import styles from "./about.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
     <main className={styles.main}>
       <div className={styles.myInfos}>
-        <Image src="/me.png" alt="" width={700} height={600} />
+        <Image src="/me.png" alt="" width={600} height={600} />
         <Table
-          caption={"Who I am?"}
-          columns={["name", "age", "email", "phone", "role"]}
+          caption={"Quem sou?"}
+          columns={["Nome", "Idade", "Sobre mim", "Função"]}
           data={[
             "Kaique Rierickson Torres",
-            "21",
-            "riericksontorres@gmail.com",
-            "(81) 9 8970-0245",
+            "22",
+            "Eu sou um engenheiro de software com 1 ano de experiência e apaixonado por dev e ops. Tive a oportunidade de experimentar a base de desenvolvimento de software em linguagens como C#, Java e Typescript!",
             "Fullstack Developer",
           ]}
         />
@@ -40,27 +40,37 @@ export default function About() {
             "SpringBoot",
             "PostgreSQL",
             "Python",
+            "C#",
+            "Flutter",
           ]}
           data={[
-            "79",
             "80",
-            "88",
-            "88",
-            "82",
-            "77",
-            "77",
-            "99",
-            "97",
-            "96",
+            "86",
+            "90",
+            "90",
             "85",
-            "69",
-            "81",
+            "80",
+            "80",
+            "85",
+            "98",
+            "90",
+            "75",
+            "70",
+            "85",
             "75",
             "75",
+            "80",
             "75",
-            "68",
+            "70",
+            "67",
           ]}
         />
+        <div className={styles.foot}>
+          <Link href="/" className={styles.link}>
+            <Image src="/backbutton.png" alt="" width={70} height={40} />
+            <p>Voltar</p>
+          </Link>
+        </div>
       </div>
     </main>
   );

@@ -5,6 +5,7 @@ import InfoBar from "@/components/infoBar/infoBar";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { instance } from "./config/axios/axios";
+import { Switch } from "@mui/material";
 
 export default function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -55,16 +56,14 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div>
-        <div>
-          {isPlaying ? (
-            <button onClick={toggleIsPlaying} className={styles.button}>
-              Pause
-            </button>
-          ) : (
-            <button onClick={toggleIsPlaying} className={styles.button}>
-              Play
-            </button>
-          )}
+        <div className={styles.switch}>
+          <label>Musica</label>
+          <Switch
+            checked={isPlaying}
+            onChange={toggleIsPlaying}
+            inputProps={{ "aria-label": "controlled" }}
+            color="primary"
+          />
         </div>
         <audio
           src="/music.mp3"

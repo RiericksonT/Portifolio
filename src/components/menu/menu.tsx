@@ -7,11 +7,6 @@ export default function Menu() {
   return (
     <nav className={styles.nav}>
       <ul className={styles.ul}>
-        <li className={styles.liMain}>
-          <Link href="/" id="main" style={{ textDecoration: "none" }}>
-            <MenuCard title="Inicio" />
-          </Link>
-        </li>
         <li className={styles.liAbout}>
           <Link href="/about" id="about" style={{ textDecoration: "none" }}>
             <MenuCard title="Sobre" />
